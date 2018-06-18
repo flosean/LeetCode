@@ -37,14 +37,12 @@ char* longestPalindrome(char* s) {
             k = j + i - 1;
             if ( s[j] == s[k] && d_table[j+1][k-1] ) {
                 d_table[j][k] = true;
-                if ( i > maxlen ) {
+                if ( i >= maxlen ) {
                     maxlen = i;
                     start = j;
                 }
             }
         }
-
-    printf("%d %d\n", start, maxlen);
 
     char *ans;
     ans = malloc(sizeof(char) * 2048);
